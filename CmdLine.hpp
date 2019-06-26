@@ -25,6 +25,7 @@ protected:
 class CmdLineManyTransforms : public CmdLine
 {
     using CmdLine::CmdLine;
+    CmdLineManyTransforms() = default;
     void handleMorphing() override;
 };
 #endif

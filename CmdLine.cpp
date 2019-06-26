@@ -11,7 +11,6 @@ CmdLine::CmdLine(std::string windowName, std::unique_ptr<ImgWarp_MLS> algo, cons
 {
     std::make_shared<cv::Point2i>(10,20);
     morphing = std::make_shared<Morphing<cv::Point2i>>(std::move(algo), srcImage);
-    startKeyHandling();
 }
 
 void CmdLine::startKeyHandling()
@@ -41,7 +40,7 @@ void CmdLine::startKeyHandling()
         } else if("del" == command) //type for deletion
         {
             handleDel();
-        } else if ("line" == command)//automatically create straight line 
+        } else if ("line" == command)//automatically create straight line
         {
             handleLine(Orientation::doNotTouch);
         } else if ("horizontal" == command) //horizontal line
@@ -161,16 +160,14 @@ void CmdLine::handleLine(Orientation targetOrientation)
     mouse.setCommand(std::move(command));
 }
 
-/*
 void CmdLine::handleMorphing()
 {
     morphing->doMorphing();
     cv::imshow( "morphed", morphing->morphed);
     logger.logDebug("imshow morphed");
 }
-*/
 
-void CmdLine/*ManyTransforms*/::handleMorphing()
+void CmdLineManyTransforms::handleMorphing()
 {
     morphing->doMorphing();
     cv::imshow( "morphed", morphing->morphed);
@@ -180,3 +177,9 @@ void CmdLine/*ManyTransforms*/::handleMorphing()
     cv::imshow(windowName, morphing->original);
     logger.logDebug("imshow original on windowName:", windowName);
 }
+/*
+CmdLineManyTransforms::CmdLineManyTransforms()
+{
+    using CmdLine::CmdLine;
+    logger.logDebug("CmdLineManyTransforms default constructor.");
+}*/
