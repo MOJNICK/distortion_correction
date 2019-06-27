@@ -7,6 +7,9 @@ https://github.com/cxcxcxcx/imgwarp-opencv
 Compilation:
 cmake .; make
 
+Execution:
+./execute 'path/to/image.jpg'
+
 After start you are in simple interactive command line (CmdLine::startKeyHandling() in CmdLine.hpp).
 You can switch between following modes:  
 'morphing' - main command, transform image source points to destination points using morphing algorithm  
@@ -15,6 +18,7 @@ You can switch between following modes:
 'horizontal' - like line mode, but destination line is horizontal  
 'vertical' - like line mode, but destination line is vertical  
 'algo[1,2,3]' - select one of three available morphing algorithms  
+'exit' - close the program
 
 
 Arrows represent morphing transform which will be applied to image. In the right image you can see the result.
