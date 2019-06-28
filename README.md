@@ -1,13 +1,13 @@
 Correct distortion by given user input thanks to morphing technique.
 
-Dependencies:
-OpenCV4 (should work with other versions, but 4 is tested)
+Dependencies:  
+OpenCV4 (should work with other versions, but 4 is tested)  
 https://github.com/cxcxcxcx/imgwarp-opencv
 
-Compilation:
+Compilation:  
 cmake .; make
 
-Execution:
+Execution:  
 ./execute 'path/to/image.jpg'
 
 After start you are in simple interactive command line (CmdLine::startKeyHandling() in CmdLine.hpp).
